@@ -1,0 +1,10 @@
+vector db const로 http통신하게 변경
+vector db store_news_vectors 함수 다른파일로 위치이동?
+store_news_vectors함수 내부 쪼개기
+newsParse파일 테스트 추가
+split_text_chunks 함수 반복문내부 프라이빗함수로
+print 로그로 변경
+
+
+
+ docker run -d -v ./chroma-data:/data -p 8456:8000 chromadb/chroma 
