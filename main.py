@@ -4,7 +4,8 @@ from api.kor_inv.getHotStocks import get_hotStocks
 from db.mysql_handler import update_hot_stocks, init_progress_table
 from db.vector_db import init_chroma_db
 from processor.stock_processor import process_single_stock
-import const.const_env
+
+
 # 메인함수
 def main():
     """메인 실행 함수"""

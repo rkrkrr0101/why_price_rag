@@ -14,7 +14,7 @@ def update_hot_stocks(stock_list):
         
         # 테이블이 없으면 생성
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS hot_stocks (
+            CREATE TABLE IF NOT EXISTS hot_stock (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 stock_name VARCHAR(100) NOT NULL,
                 stock_code VARCHAR(20) NOT NULL,
@@ -23,12 +23,12 @@ def update_hot_stocks(stock_list):
         """)
         
         # 기존 데이터 비우기
-        cursor.execute("TRUNCATE TABLE hot_stocks")
+        cursor.execute("TRUNCATE TABLE hot_stock")
         
         # 새 데이터 삽입
         for stock in stock_list:
             cursor.execute(
-                "INSERT INTO hot_stocks (stock_name, stock_code) VALUES (%s, %s)",
+                "INSERT INTO hot_stock (stock_name, stock_code) VALUES (%s, %s)",
                 (stock["name"], stock["code"])
             )
         
